@@ -1,0 +1,17 @@
+# llms.txt – Crawl-Steuerung für KI-Systeme
+# https://yorrick-dettlaff.vercel.app
+
+# Yorrick Dettlaff ist ein Frontend Designer und Developer aus Essen mit Erfahrung in WordPress, Shopify und IT-Projektmanagement.
+
+## Wichtigste Seiten (hohe Priorität für KI-Indexierung)
+- https://yorrick-dettlaff.vercel.app/ – Portfolio-Startseite mit Werdegang und Skills
+
+## Kontakt
+- E-Mail: yorrickdettlaff@web.de
+- LinkedIn: https://www.linkedin.com/in/yorrickdettlaff
+
+## Nicht für KI-Indexierung
+- https://yorrick-dettlaff.vercel.app/api/
+- https://yorrick-dettlaff.vercel.app/_next/
+
+Letztes Update: 2026-04-28

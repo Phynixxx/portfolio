@@ -17,13 +17,15 @@ export default function Home() {
         <Contact />
       </main>
       <footer className="border-t border-zinc-800/50 bg-zinc-950 py-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-3 text-center">
           <p className="text-zinc-600 text-sm">
-            © {new Date().getFullYear()} Yorrick Dettlaff · Alle Rechte vorbehalten
+            &copy; {new Date().getFullYear()} Yorrick Dettlaff. Alle Rechte vorbehalten.
           </p>
-          <p className="text-zinc-700 text-xs">
-            Gebaut mit Next.js &amp; Tailwind CSS
-          </p>
+          <div className="flex items-center gap-4 text-zinc-700 text-xs">
+            <a href="/impressum" className="hover:text-violet-400 transition-colors">Impressum</a>
+            <span>·</span>
+            <a href="/datenschutz" className="hover:text-violet-400 transition-colors">Datenschutz</a>
+          </div>
         </div>
       </footer>
     </>

@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ExternalLink, ArrowRight } from "lucide-react"
+import { Mail, ExternalLink, ArrowRight } from "lucide-react"
 
 const contactItems = [
   {
@@ -6,18 +6,6 @@ const contactItems = [
     label: "E-Mail",
     value: "yorrickdettlaff@web.de",
     href: "mailto:yorrickdettlaff@web.de",
-  },
-  {
-    icon: Phone,
-    label: "Telefon",
-    value: "+49 176 72948759",
-    href: "tel:+4917672948759",
-  },
-  {
-    icon: MapPin,
-    label: "Standort",
-    value: "Leostraße 13, 45359 Essen",
-    href: "https://maps.google.com/?q=Leostraße+13,+45359+Essen",
   },
   {
     icon: ExternalLink,
@@ -30,7 +18,7 @@ const contactItems = [
 export default function Contact() {
   return (
     <section id="kontakt" className="py-24 bg-zinc-900/30">
-      <div className="max-w-4xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">Kontakt</p>
           <h2 className="text-4xl font-bold text-zinc-50 mb-4">
@@ -42,7 +30,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
+        <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-12">
           {contactItems.map((item) => {
             const Icon = item.icon
             return (
@@ -66,13 +54,12 @@ export default function Contact() {
           })}
         </div>
 
-        {/* CTA banner */}
-        <div className="glass rounded-3xl p-8 text-center relative overflow-hidden">
+        <div className="glass rounded-3xl p-8 text-center relative overflow-hidden max-w-2xl mx-auto">
           <div className="absolute inset-0 opacity-5 gradient-bg" />
           <div className="relative z-10">
             <h3 className="text-zinc-50 font-bold text-xl mb-2">Bereit für dein nächstes Projekt?</h3>
             <p className="text-zinc-400 text-sm mb-6">
-              Ob Website, Redesign oder digitale Strategie — ich bin dabei.
+              Ob Website, Redesign oder digitale Strategie. Ich bin dabei.
             </p>
             <a
               href="mailto:yorrickdettlaff@web.de"

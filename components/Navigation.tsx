@@ -22,9 +22,18 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "glass shadow-lg shadow-black/20" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={
+        scrolled
+          ? {
+              background: "rgba(9, 9, 11, 0.92)",
+              backdropFilter: "blur(24px)",
+              WebkitBackdropFilter: "blur(24px)",
+              borderBottom: "1px solid rgba(63, 63, 70, 0.4)",
+              boxShadow: "0 4px 24px rgba(0,0,0,0.4)",
+            }
+          : { background: "transparent" }
+      }
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="font-bold text-xl tracking-tight">
@@ -37,7 +46,7 @@ export default function Navigation() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-zinc-400 hover:text-zinc-100 text-sm font-medium transition-colors duration-200 hover:text-violet-400"
+                className="text-zinc-400 hover:text-violet-400 text-sm font-medium transition-colors duration-200"
               >
                 {l.label}
               </a>
@@ -62,8 +71,15 @@ export default function Navigation() {
       </nav>
 
       {open && (
-        <div className="md:hidden glass border-t border-zinc-800/50">
-          <ul className="flex flex-col px-6 py-4 gap-4">
+        <div
+          style={{
+            background: "rgba(9, 9, 11, 0.95)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
+            borderTop: "1px solid rgba(63, 63, 70, 0.4)",
+          }}
+        >
+          <ul className="flex flex-col px-6 py-4 gap-4 max-w-6xl mx-auto">
             {links.map((l) => (
               <li key={l.href}>
                 <a

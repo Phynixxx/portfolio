@@ -4,28 +4,28 @@ const skills = [
   {
     icon: Layout,
     title: "Frontend Design",
-    description: "UI/UX-Gestaltung mit Fokus auf moderne, nutzerzentrierte Interfaces und klare visuelle Hierarchie.",
+    description: "UI/UX Gestaltung mit Fokus auf moderne, nutzerzentrierte Interfaces und klare visuelle Hierarchie.",
     tags: ["Figma", "Tailwind CSS", "Responsive"],
     level: 90,
   },
   {
     icon: Code2,
     title: "Webentwicklung",
-    description: "Saubere, performante Implementierung von Websites und Web-Applikationen nach aktuellen Standards.",
+    description: "Saubere, performante Implementierung von Websites und Web Applikationen nach aktuellen Standards.",
     tags: ["HTML", "CSS", "JavaScript"],
     level: 85,
   },
   {
     icon: ShoppingBag,
-    title: "WordPress & Shopify",
-    description: "Entwicklung und Anpassung von WordPress-Themes und Shopify-Stores — von Setup bis Go-Live.",
+    title: "WordPress und Shopify",
+    description: "Entwicklung und Anpassung von WordPress Themes und Shopify Stores. Von Setup bis Go Live.",
     tags: ["Themes", "Plugins", "E-Commerce"],
     level: 88,
   },
   {
     icon: BarChart3,
     title: "Multimedia Marketing",
-    description: "Digitale Marketingstrategien, Content-Erstellung und datengetriebene Kampagnenplanung.",
+    description: "Digitale Marketingstrategien, Content Erstellung und datengetriebene Kampagnenplanung.",
     tags: ["SEO", "Content", "Analytics"],
     level: 80,
   },
@@ -38,21 +38,21 @@ const skills = [
   },
   {
     icon: Settings,
-    title: "Scrum & Agile",
-    description: "Erfahrung in agilen Arbeitsmethoden — von Sprint-Planung bis Retrospektive im Team.",
+    title: "Scrum und Agile",
+    description: "Erfahrung in agilen Methoden. Von Sprint Planung bis Retrospektive im Team.",
     tags: ["Sprints", "Kanban", "Retrospektive"],
     level: 80,
   },
   {
     icon: Layers,
-    title: "UI-Komponenten",
-    description: "Aufbau wiederverwendbarer Komponentenbibliotheken für konsistente Design-Systeme.",
+    title: "UI Komponenten",
+    description: "Aufbau wiederverwendbarer Komponentenbibliotheken für konsistente Design Systeme.",
     tags: ["Komponentendesign", "Styleguide"],
     level: 82,
   },
   {
     icon: Zap,
-    title: "Tooling & Workflow",
+    title: "Tooling und Workflow",
     description: "Effiziente Entwicklungsworkflows mit modernen Tools für Zusammenarbeit und Deployment.",
     tags: ["Git", "VS Code", "CI/CD"],
     level: 78,
@@ -88,26 +88,19 @@ export default function Skills() {
                 <h3 className="text-zinc-100 font-semibold text-sm mb-2">{skill.title}</h3>
                 <p className="text-zinc-500 text-xs leading-relaxed mb-4">{skill.description}</p>
 
-                {/* Level bar */}
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-1">
                     <span className="text-zinc-600 text-xs">Level</span>
                     <span className="text-violet-400 text-xs font-medium">{skill.level}%</span>
                   </div>
                   <div className="h-1 bg-zinc-800 rounded-full overflow-hidden">
-                    <div
-                      className="h-full gradient-bg rounded-full"
-                      style={{ width: `${skill.level}%` }}
-                    />
+                    <div className="h-full gradient-bg rounded-full" style={{ width: `${skill.level}%` }} />
                   </div>
                 </div>
 
                 <div className="flex flex-wrap gap-1">
                   {skill.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400"
-                    >
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400">
                       {tag}
                     </span>
                   ))}

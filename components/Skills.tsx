@@ -45,9 +45,9 @@ export default function Skills() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-1">
+                <div className="flex flex-wrap gap-1 min-h-[48px] content-start">
                   {skill.tags.map((tag) => (
-                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400">
+                    <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-zinc-800/80 text-zinc-400 h-fit">
                       {tag}
                     </span>
                   ))}

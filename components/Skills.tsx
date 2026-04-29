@@ -67,13 +67,13 @@ export default function Skills() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           {skills.map((skill) => {
             const Icon = skill.icon
             return (
               <div
                 key={skill.title}
-                className="glass glass-hover card-glow rounded-2xl p-6 transition-all duration-300 group"
+                className="glass glass-hover card-glow rounded-2xl p-6 transition-all duration-300 group w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)]"
               >
                 <div className="w-11 h-11 rounded-xl gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200">
                   <Icon size={20} className="text-white" />

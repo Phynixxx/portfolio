@@ -25,7 +25,7 @@ export default function ImpressumContent() {
             </h2>
             <p className="text-zinc-300 font-medium">Yorrick Dettlaff</p>
             <p className="mt-2 text-sm">
-              {de ? "Freiberuflicher Frontend Designer und Developer" : "Freelance Frontend Designer and Developer"}
+              {de ? "Frontend Developer und Projektmanager" : "Frontend Developer and Project Manager"}
             </p>
           </section>
 

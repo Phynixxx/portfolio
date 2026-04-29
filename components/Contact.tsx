@@ -59,7 +59,7 @@ export default function Contact() {
           <div className="relative z-10">
             <h3 className="text-zinc-50 font-bold text-xl mb-2">Bereit für dein nächstes Projekt?</h3>
             <p className="text-zinc-400 text-sm mb-6">
-              Ob Webdesign, andere Webprojekte oder Projektmanagement. Ich bin dabei.
+              Ob Website, andere Webprojekte oder Projektmanagement, ich bin dabei.
             </p>
             <a
               href="mailto:yorrickdettlaff@web.de"

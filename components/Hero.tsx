@@ -5,29 +5,51 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
 export default function Hero() {
-  const [mousePos, setMousePos] = useState({ x: -999, y: -999 })
+  const [orbPos, setOrbPos] = useState({ x: -999, y: -999 })
   const sectionRef = useRef<HTMLElement>(null)
+  const targetRef = useRef({ x: -999, y: -999 })
+  const currentRef = useRef({ x: -999, y: -999 })
+  const rafRef = useRef<number>(0)
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!sectionRef.current) return
       const rect = sectionRef.current.getBoundingClientRect()
-      setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top })
+      targetRef.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
     }
+
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t
+
+    const animate = () => {
+      const cur = currentRef.current
+      const tar = targetRef.current
+      const nextX = lerp(cur.x, tar.x, 0.07)
+      const nextY = lerp(cur.y, tar.y, 0.07)
+      currentRef.current = { x: nextX, y: nextY }
+      setOrbPos({ x: nextX, y: nextY })
+      rafRef.current = requestAnimationFrame(animate)
+    }
+
     const el = sectionRef.current
     el?.addEventListener("mousemove", handleMouseMove)
-    return () => el?.removeEventListener("mousemove", handleMouseMove)
+    rafRef.current = requestAnimationFrame(animate)
+
+    return () => {
+      el?.removeEventListener("mousemove", handleMouseMove)
+      cancelAnimationFrame(rafRef.current)
+    }
   }, [])
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
-      {/* Mouse-following orb */}
+      {/* Mouse-following orb — GPU-composited via transform, no layout reflow */}
       <div
         className="absolute w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-3xl pointer-events-none"
         style={{
-          left: mousePos.x - 250,
-          top: mousePos.y - 250,
-          transition: "left 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), top 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+          top: 0,
+          left: 0,
+          transform: `translate(${orbPos.x - 250}px, ${orbPos.y - 250}px)`,
+          willChange: "transform",
         }}
       />
 

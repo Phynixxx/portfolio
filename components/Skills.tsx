@@ -19,7 +19,7 @@ const skills = [
     icon: ShoppingBag,
     title: "WordPress und Shopify",
     description: "Entwicklung und Anpassung von WordPress Themes und Shopify Stores. Von Setup bis Go Live.",
-    tags: ["Themes", "Plugins", "E-Commerce", "Elemente"],
+    tags: ["Themes", "Plugins", "Elementor", "E-Commerce"],
     level: 88,
   },
   {

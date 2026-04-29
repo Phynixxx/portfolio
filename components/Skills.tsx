@@ -1,75 +1,29 @@
-import { Code2, Layout, ShoppingBag, Settings, BarChart3, Users, Layers, Zap } from "lucide-react"
+"use client"
 
-const skills = [
-  {
-    icon: Layout,
-    title: "Frontend Design",
-    description: "UI/UX Gestaltung mit Fokus auf moderne, nutzerzentrierte Interfaces und klare visuelle Hierarchie.",
-    tags: ["Figma", "Shopify", "Responsive"],
-    level: 80,
-  },
-  {
-    icon: Code2,
-    title: "Webentwicklung",
-    description: "Saubere, performante Implementierung von Websites und Web Applikationen nach aktuellen Standards.",
-    tags: ["HTML", "CSS", "JavaScript"],
-    level: 85,
-  },
-  {
-    icon: ShoppingBag,
-    title: "WordPress und Shopify",
-    description: "Entwicklung und Anpassung von WordPress Themes und Shopify Stores. Von Setup bis Go Live.",
-    tags: ["Themes", "Plugins", "Elementor", "E-Commerce"],
-    level: 88,
-  },
-  {
-    icon: BarChart3,
-    title: "Multimedia Marketing",
-    description: "Digitale Marketingstrategien, Content Erstellung und datengetriebene Kampagnenplanung.",
-    tags: ["SEO", "Content", "Analytics"],
-    level: 65,
-  },
-  {
-    icon: Users,
-    title: "Projektmanagement",
-    description: "Planung, Koordination und Steuerung digitaler Projekte als Teamlead und Projektmanager.",
-    tags: ["Scrum", "Asana", "Awork"],
-    level: 70,
-  },
-  {
-    icon: Layers,
-    title: "UI Komponenten",
-    description: "Aufbau wiederverwendbarer Komponentenbibliotheken für konsistente Design Systeme.",
-    tags: ["Komponentendesign", "Styleguide"],
-    level: 82,
-  },
-  {
-    icon: Zap,
-    title: "Tooling und Workflow",
-    description: "Effiziente Entwicklungsworkflows mit modernen Tools für Zusammenarbeit und Deployment.",
-    tags: ["Git", "VS Code", "Cursor", "CI/CD"],
-    level: 78,
-  },
-]
+import { Code2, Layout, ShoppingBag, Settings, BarChart3, Users, Layers, Zap } from "lucide-react"
+import { useLanguage } from "@/components/LanguageProvider"
+
+const icons = [Layout, Code2, ShoppingBag, BarChart3, Users, Layers, Zap]
 
 export default function Skills() {
+  const { t } = useLanguage()
+
   return (
     <section id="skills" className="py-24 bg-zinc-900/30">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">Kompetenzen</p>
+          <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">{t.skills.label}</p>
           <h2 className="text-4xl font-bold text-zinc-50 mb-4">
-            Was ich <span className="gradient-text">mitbringe</span>
+            {t.skills.heading} <span className="gradient-text">{t.skills.headingGradient}</span>
           </h2>
           <p className="text-zinc-400 max-w-xl mx-auto">
-            Eine Kombination aus technischen Fähigkeiten, gestalterischem Gespür
-            und strategischem Denken.
+            {t.skills.description}
           </p>
         </div>
 
         <div className="flex flex-wrap justify-center gap-4">
-          {skills.map((skill) => {
-            const Icon = skill.icon
+          {t.skills.items.map((skill, i) => {
+            const Icon = icons[i]
             return (
               <div
                 key={skill.title}
@@ -83,7 +37,7 @@ export default function Skills() {
 
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-1">
-                    <span className="text-zinc-600 text-xs">Level</span>
+                    <span className="text-zinc-600 text-xs">{t.skills.levelLabel}</span>
                     <span className="text-violet-400 text-xs font-medium">{skill.level}%</span>
                   </div>
                   <div className="h-1 bg-zinc-800 rounded-full overflow-hidden">

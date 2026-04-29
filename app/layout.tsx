@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { JsonLd } from "@/components/seo/JsonLd"
+import { LanguageProvider } from "@/components/LanguageProvider"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -88,9 +89,11 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${inter.variable} scroll-smooth`}>
       <body className="bg-zinc-950 text-zinc-50 font-sans antialiased">
-        <JsonLd data={personSchema} />
-        <JsonLd data={websiteSchema} />
-        {children}
+        <LanguageProvider>
+          <JsonLd data={personSchema} />
+          <JsonLd data={websiteSchema} />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

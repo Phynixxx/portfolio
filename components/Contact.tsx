@@ -1,32 +1,36 @@
-import { Mail, ExternalLink, ArrowRight } from "lucide-react"
+"use client"
 
-const contactItems = [
-  {
-    icon: Mail,
-    label: "E-Mail",
-    value: "yorrickdettlaff@web.de",
-    href: "mailto:yorrickdettlaff@web.de",
-  },
-  {
-    icon: ExternalLink,
-    label: "LinkedIn",
-    value: "linkedin.com/in/yorrick-dettlaff",
-    href: "https://www.linkedin.com/in/yorrick-dettlaff",
-  },
-]
+import { Mail, ExternalLink, ArrowRight } from "lucide-react"
+import { useLanguage } from "@/components/LanguageProvider"
 
 export default function Contact() {
+  const { t } = useLanguage()
+
+  const contactItems = [
+    {
+      icon: Mail,
+      label: "E-Mail",
+      value: "yorrickdettlaff@web.de",
+      href: "mailto:yorrickdettlaff@web.de",
+    },
+    {
+      icon: ExternalLink,
+      label: "LinkedIn",
+      value: "linkedin.com/in/yorrick-dettlaff",
+      href: "https://www.linkedin.com/in/yorrick-dettlaff",
+    },
+  ]
+
   return (
     <section id="kontakt" className="py-24 bg-zinc-900/30">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">Kontakt</p>
+          <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">{t.contact.label}</p>
           <h2 className="text-4xl font-bold text-zinc-50 mb-4">
-            Lass uns <span className="gradient-text">sprechen</span>
+            {t.contact.heading} <span className="gradient-text">{t.contact.headingGradient}</span>
           </h2>
           <p className="text-zinc-400 max-w-md mx-auto">
-            Du hast ein Projekt, eine Idee oder möchtest einfach in Kontakt treten?
-            Ich freue mich auf deine Nachricht.
+            {t.contact.description}
           </p>
         </div>
 
@@ -57,16 +61,16 @@ export default function Contact() {
         <div className="glass rounded-3xl p-8 text-center relative overflow-hidden max-w-2xl mx-auto">
           <div className="absolute inset-0 opacity-5 gradient-bg" />
           <div className="relative z-10">
-            <h3 className="text-zinc-50 font-bold text-xl mb-2">Bereit für dein nächstes Projekt?</h3>
+            <h3 className="text-zinc-50 font-bold text-xl mb-2">{t.contact.ctaHeading}</h3>
             <p className="text-zinc-400 text-sm mb-6">
-              Ob Website, andere Webprojekte oder Projektmanagement, ich bin dabei.
+              {t.contact.ctaText}
             </p>
             <a
               href="mailto:yorrickdettlaff@web.de"
               className="gradient-bg text-white px-8 py-3.5 rounded-2xl font-medium text-sm hover:opacity-90 hover:scale-105 transition-all duration-200 inline-flex items-center gap-2 shadow-lg shadow-violet-500/25"
             >
               <Mail size={16} />
-              E-Mail schreiben
+              {t.contact.ctaBtn}
             </a>
           </div>
         </div>

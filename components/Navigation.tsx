@@ -2,23 +2,45 @@
 
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
-
-const links = [
-  { href: "#ueber-mich", label: "Über mich" },
-  { href: "#skills", label: "Skills" },
-  { href: "#karriere", label: "Karriere" },
-  { href: "#kontakt", label: "Kontakt" },
-]
+import { useLanguage } from "@/components/LanguageProvider"
+import type { Locale } from "@/lib/translations"
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { locale, setLocale, t } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
   }, [])
+
+  const links = [
+    { href: "#ueber-mich", label: t.nav.about },
+    { href: "#skills", label: t.nav.skills },
+    { href: "#karriere", label: t.nav.career },
+    { href: "#kontakt", label: t.nav.contact },
+  ]
+
+  const LangToggle = ({ className }: { className?: string }) => (
+    <div className={`flex items-center rounded-xl overflow-hidden border border-zinc-700/50 ${className ?? ""}`}>
+      {(["de", "en"] as Locale[]).map((l) => (
+        <button
+          key={l}
+          onClick={() => setLocale(l)}
+          aria-label={l === "de" ? "Deutsch" : "English"}
+          className={`px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+            locale === l
+              ? "gradient-bg text-white"
+              : "text-zinc-400 hover:text-zinc-200 bg-transparent"
+          }`}
+        >
+          {l.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  )
 
   return (
     <header
@@ -54,12 +76,15 @@ export default function Navigation() {
           ))}
         </ul>
 
-        <a
-          href="#kontakt"
-          className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium gradient-bg text-white transition-all duration-200 hover:opacity-90 hover:scale-105"
-        >
-          Kontakt aufnehmen
-        </a>
+        <div className="hidden md:flex items-center gap-3">
+          <LangToggle />
+          <a
+            href="#kontakt"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium gradient-bg text-white transition-all duration-200 hover:opacity-90 hover:scale-105"
+          >
+            {t.nav.contactBtn}
+          </a>
+        </div>
 
         <button
           className="md:hidden text-zinc-400 hover:text-zinc-100 p-2"
@@ -79,19 +104,31 @@ export default function Navigation() {
             borderTop: "1px solid rgba(63, 63, 70, 0.4)",
           }}
         >
-          <ul className="flex flex-col px-6 py-4 gap-4 max-w-6xl mx-auto">
-            {links.map((l) => (
-              <li key={l.href}>
-                <a
-                  href={l.href}
-                  className="text-zinc-300 hover:text-violet-400 text-sm font-medium transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col px-6 py-4 gap-4 max-w-6xl mx-auto">
+            <ul className="flex flex-col gap-4">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    className="text-zinc-300 hover:text-violet-400 text-sm font-medium transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="pt-2 border-t border-zinc-800/50 flex items-center justify-between">
+              <a
+                href="#kontakt"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium gradient-bg text-white"
+                onClick={() => setOpen(false)}
+              >
+                {t.nav.contactBtn}
+              </a>
+              <LangToggle />
+            </div>
+          </div>
         </div>
       )}
     </header>

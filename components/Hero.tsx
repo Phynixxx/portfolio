@@ -3,6 +3,7 @@
 import { ArrowDown, ExternalLink } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import { useLanguage } from "@/components/LanguageProvider"
 
 export default function Hero() {
   const [orbPos, setOrbPos] = useState({ x: -999, y: -999 })
@@ -10,6 +11,7 @@ export default function Hero() {
   const targetRef = useRef({ x: -999, y: -999 })
   const currentRef = useRef({ x: -999, y: -999 })
   const rafRef = useRef<number>(0)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -69,7 +71,7 @@ export default function Hero() {
         <div className="flex-1 text-center lg:text-left animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-zinc-400 text-xs font-medium tracking-wider uppercase mb-8">
             <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
-            Verfügbar für neue Projekte
+            {t.hero.badge}
           </div>
 
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-zinc-50 leading-none mb-4">
@@ -79,12 +81,12 @@ export default function Hero() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-zinc-400 font-light mt-4 mb-6">
-            Frontend Designer &amp; Developer
+            {t.hero.subtitle}
           </p>
 
           <p className="text-zinc-500 text-base leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10">
-            Ich gestalte und entwickle moderne Websites und digitale Erlebnisse.
-            Fokus auf <span className="whitespace-nowrap">sauberes Design,</span> Performance und <span className="whitespace-nowrap">nutzerzentriertes Denken.</span>
+            {t.hero.description1}{" "}
+            {t.hero.description2} <span className="whitespace-nowrap">{t.hero.descClean}</span> {t.hero.descMid} <span className="whitespace-nowrap">{t.hero.descUser}</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
@@ -92,13 +94,13 @@ export default function Hero() {
               href="#kontakt"
               className="gradient-bg text-white px-8 py-3.5 rounded-2xl font-medium text-sm hover:opacity-90 hover:scale-105 transition-all duration-200 shadow-lg shadow-violet-500/25"
             >
-              Kontakt aufnehmen
+              {t.hero.ctaContact}
             </a>
             <a
               href="#karriere"
               className="glass glass-hover text-zinc-300 px-8 py-3.5 rounded-2xl font-medium text-sm flex items-center gap-2"
             >
-              Mein Werdegang
+              {t.hero.ctaCareer}
               <ArrowDown size={14} />
             </a>
           </div>
@@ -114,7 +116,7 @@ export default function Hero() {
               LinkedIn
             </a>
             <span className="w-px h-4 bg-zinc-700" />
-            <span className="text-zinc-500 text-sm">NRW, Deutschland</span>
+            <span className="text-zinc-500 text-sm">{t.hero.location}</span>
           </div>
         </div>
 
@@ -133,7 +135,7 @@ export default function Hero() {
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 shadow-xl">
-              <p className="text-zinc-400 text-xs">Erfahrung seit</p>
+              <p className="text-zinc-400 text-xs">{t.hero.since}</p>
               <p className="text-zinc-50 font-bold text-lg leading-tight">2019</p>
             </div>
           </div>

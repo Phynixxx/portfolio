@@ -1,63 +1,34 @@
-import { Languages, GraduationCap, Briefcase, Star } from "lucide-react"
+"use client"
 
-const facts = [
-  {
-    icon: Briefcase,
-    label: "Aktuell",
-    value: "Offen für neue Rollen",
-  },
-  {
-    icon: Star,
-    label: "Schwerpunkt",
-    value: "Frontend Design und Projektmanagement",
-  },
-  {
-    icon: Languages,
-    label: "Sprachen",
-    value: "Deutsch und Englisch",
-  },
-  {
-    icon: GraduationCap,
-    label: "Ausbildung",
-    value: "Kaufmann im Groß- und Außenhandel",
-  },
-]
+import { Languages, GraduationCap, Briefcase, Star } from "lucide-react"
+import { useLanguage } from "@/components/LanguageProvider"
+
+const icons = [Briefcase, Star, Languages, GraduationCap]
 
 export default function About() {
+  const { t } = useLanguage()
+
   return (
     <section id="ueber-mich" className="py-24 bg-zinc-950">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">Über mich</p>
+            <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-4">{t.about.label}</p>
             <h2 className="text-4xl font-bold text-zinc-50 mb-6 leading-tight">
-              Kaufmann.
+              {t.about.heading}
               <br />
-              <span className="gradient-text">Developer. Designer.</span>
+              <span className="gradient-text">{t.about.headingGradient}</span>
             </h2>
             <div className="space-y-4 text-zinc-400 leading-relaxed">
-              <p>
-                Ich bin Yorrick Dettlaff, Frontend Designer und Entwickler aus Essen.
-                Mein Weg begann mit einer Ausbildung zum Kaufmann im Groß- und Außenhandel
-                und mündete schließlich in meine Leidenschaft:
-                das Gestalten und Entwickeln digitaler Produkte.
-              </p>
-              <p>
-                Im Traineeship bei My Best Concept GmbH vertiefte ich mein Wissen als
-                Frontend Entwickler und Designer mit Fokus auf WordPress und Shopify.
-                Anschließend übernahm ich bei Developaway Verantwortung als Projektmanager
-                und Teamlead.
-              </p>
-              <p>
-                Kaufmännisches Denken, technische Stärke und ein Auge für gutes Design
-                machen mich zum vielseitigen Partner für digitale Projekte jeder Größe.
-              </p>
+              {t.about.bio.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            {facts.map((fact) => {
-              const Icon = fact.icon
+            {t.about.facts.map((fact, i) => {
+              const Icon = icons[i]
               return (
                 <div
                   key={fact.label}

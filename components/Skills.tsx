@@ -27,13 +27,13 @@ export default function Skills() {
             return (
               <div
                 key={skill.title}
-                className="glass glass-hover card-glow rounded-2xl p-6 transition-all duration-300 group w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)]"
+                className="glass glass-hover card-glow rounded-2xl p-6 transition-all duration-300 group w-full sm:w-[calc(50%-8px)] lg:w-[calc(25%-12px)] flex flex-col"
               >
                 <div className="w-11 h-11 rounded-xl gradient-bg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200">
                   <Icon size={20} className="text-white" />
                 </div>
                 <h3 className="text-zinc-100 font-semibold text-sm mb-2">{skill.title}</h3>
-                <p className="text-zinc-500 text-xs leading-relaxed mb-4">{skill.description}</p>
+                <p className="text-zinc-500 text-xs leading-relaxed mb-4 flex-1">{skill.description}</p>
 
                 <div className="mb-4">
                   <div className="flex justify-between items-center mb-1">

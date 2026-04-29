@@ -76,6 +76,8 @@ export const translations = {
     },
     footer: {
       rights: "Alle Rechte vorbehalten.",
+      impressum: "Impressum",
+      datenschutz: "Datenschutz",
     },
   },
   en: {
@@ -155,6 +157,8 @@ export const translations = {
     },
     footer: {
       rights: "All rights reserved.",
+      impressum: "Legal Notice",
+      datenschutz: "Privacy Policy",
     },
   },
 } as const

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { useLanguage } from "@/components/LanguageProvider"
 import type { Locale } from "@/lib/translations"
@@ -9,6 +10,8 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const { locale, setLocale, t } = useLanguage()
+  const pathname = usePathname()
+  const base = pathname === "/" ? "" : "/"
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -17,10 +20,10 @@ export default function Navigation() {
   }, [])
 
   const links = [
-    { href: "#ueber-mich", label: t.nav.about },
-    { href: "#skills", label: t.nav.skills },
-    { href: "#karriere", label: t.nav.career },
-    { href: "#kontakt", label: t.nav.contact },
+    { href: `${base}#ueber-mich`, label: t.nav.about },
+    { href: `${base}#skills`, label: t.nav.skills },
+    { href: `${base}#karriere`, label: t.nav.career },
+    { href: `${base}#kontakt`, label: t.nav.contact },
   ]
 
   const LangToggle = ({ className }: { className?: string }) => (
@@ -58,7 +61,7 @@ export default function Navigation() {
       }
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="font-bold text-xl tracking-tight">
+        <a href="/" className="font-bold text-xl tracking-tight">
           <span className="gradient-text">YD</span>
           <span className="text-zinc-300 ml-2 text-sm font-normal hidden sm:inline">Yorrick Dettlaff</span>
         </a>
@@ -79,7 +82,7 @@ export default function Navigation() {
         <div className="hidden md:flex items-center gap-3">
           <LangToggle />
           <a
-            href="#kontakt"
+            href={`${base}#kontakt`}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium gradient-bg text-white transition-all duration-200 hover:opacity-90 hover:scale-105"
           >
             {t.nav.contactBtn}
@@ -120,7 +123,7 @@ export default function Navigation() {
             </ul>
             <div className="pt-2 border-t border-zinc-800/50 flex items-center justify-between">
               <a
-                href="#kontakt"
+                href={`${base}#kontakt`}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium gradient-bg text-white"
                 onClick={() => setOpen(false)}
               >

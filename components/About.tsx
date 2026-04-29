@@ -9,7 +9,7 @@ const facts = [
   {
     icon: Star,
     label: "Schwerpunkt",
-    value: "Frontend Design",
+    value: "Frontend Design und Projektmanagement",
   },
   {
     icon: Languages,
@@ -19,7 +19,7 @@ const facts = [
   {
     icon: GraduationCap,
     label: "Ausbildung",
-    value: "Kaufmann und Frontend",
+    value: "Kaufmann im Groß und Außenhandel",
   },
 ]
 
@@ -38,8 +38,8 @@ export default function About() {
             <div className="space-y-4 text-zinc-400 leading-relaxed">
               <p>
                 Ich bin Yorrick Dettlaff, Frontend Designer und Entwickler aus Essen.
-                Mein Weg begann mit einer Ausbildung zum Kaufmann im Groß und Außenhandel,
-                führte über ein Studium und mündete schließlich in meine Leidenschaft:
+                Mein Weg begann mit einer Ausbildung zum Kaufmann im Groß und Außenhandel
+                und mündete schließlich in meine Leidenschaft:
                 das Gestalten und Entwickeln digitaler Produkte.
               </p>
               <p>

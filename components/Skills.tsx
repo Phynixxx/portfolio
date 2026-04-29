@@ -5,8 +5,8 @@ const skills = [
     icon: Layout,
     title: "Frontend Design",
     description: "UI/UX Gestaltung mit Fokus auf moderne, nutzerzentrierte Interfaces und klare visuelle Hierarchie.",
-    tags: ["Figma", "Tailwind CSS", "Responsive"],
-    level: 90,
+    tags: ["Figma", "Shopify", "Responsive"],
+    level: 80,
   },
   {
     icon: Code2,
@@ -19,7 +19,7 @@ const skills = [
     icon: ShoppingBag,
     title: "WordPress und Shopify",
     description: "Entwicklung und Anpassung von WordPress Themes und Shopify Stores. Von Setup bis Go Live.",
-    tags: ["Themes", "Plugins", "E-Commerce"],
+    tags: ["Themes", "Plugins", "E-Commerce", "Elemente"],
     level: 88,
   },
   {
@@ -27,21 +27,14 @@ const skills = [
     title: "Multimedia Marketing",
     description: "Digitale Marketingstrategien, Content Erstellung und datengetriebene Kampagnenplanung.",
     tags: ["SEO", "Content", "Analytics"],
-    level: 80,
+    level: 65,
   },
   {
     icon: Users,
     title: "Projektmanagement",
     description: "Planung, Koordination und Steuerung digitaler Projekte als Teamlead und Projektmanager.",
     tags: ["Scrum", "Asana", "Awork"],
-    level: 85,
-  },
-  {
-    icon: Settings,
-    title: "Scrum und Agile",
-    description: "Erfahrung in agilen Methoden. Von Sprint Planung bis Retrospektive im Team.",
-    tags: ["Sprints", "Kanban", "Retrospektive"],
-    level: 80,
+    level: 70,
   },
   {
     icon: Layers,
@@ -54,7 +47,7 @@ const skills = [
     icon: Zap,
     title: "Tooling und Workflow",
     description: "Effiziente Entwicklungsworkflows mit modernen Tools für Zusammenarbeit und Deployment.",
-    tags: ["Git", "VS Code", "CI/CD"],
+    tags: ["Git", "VS Code", "Cursor", "CI/CD"],
     level: 78,
   },
 ]

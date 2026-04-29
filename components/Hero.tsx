@@ -2,6 +2,7 @@
 
 import { ArrowDown, ExternalLink } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
+import Image from "next/image"
 
 export default function Hero() {
   const [mousePos, setMousePos] = useState({ x: -999, y: -999 })
@@ -95,7 +96,7 @@ export default function Hero() {
               LinkedIn
             </a>
             <span className="w-px h-4 bg-zinc-700" />
-            <span className="text-zinc-500 text-sm">Essen, Deutschland</span>
+            <span className="text-zinc-500 text-sm">NRW, Deutschland</span>
           </div>
         </div>
 
@@ -103,13 +104,15 @@ export default function Hero() {
         <div className="flex-shrink-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <div className="relative">
             <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl gradient-bg p-0.5 animate-pulse-glow">
-              <div className="w-full h-full rounded-3xl bg-zinc-900 flex items-center justify-center overflow-hidden">
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-24 h-24 rounded-2xl gradient-bg flex items-center justify-center text-white text-4xl font-bold">
-                    YD
-                  </div>
-                  <p className="text-zinc-500 text-xs">Foto folgt</p>
-                </div>
+              <div className="w-full h-full rounded-3xl bg-zinc-900 overflow-hidden">
+                <Image
+                  src="/images/yorrick-0.jpg"
+                  alt="Yorrick Dettlaff"
+                  width={320}
+                  height={320}
+                  className="w-full h-full object-cover object-top"
+                  priority
+                />
               </div>
             </div>
             <div className="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 shadow-xl">

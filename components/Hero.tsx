@@ -42,7 +42,6 @@ export default function Hero() {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-zinc-950">
-      {/* Mouse-following orb — GPU-composited via transform, no layout reflow */}
       <div
         className="absolute w-[500px] h-[500px] bg-violet-600/20 rounded-full blur-3xl pointer-events-none"
         style={{
@@ -53,13 +52,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Static ambient orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-600/8 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }} />
       </div>
 
-      {/* Grid overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -69,7 +66,6 @@ export default function Hero() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 flex flex-col lg:flex-row items-center gap-16">
-        {/* Text content */}
         <div className="flex-1 text-center lg:text-left animate-fade-up">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-zinc-400 text-xs font-medium tracking-wider uppercase mb-8">
             <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
@@ -109,7 +105,7 @@ export default function Hero() {
 
           <div className="flex items-center gap-6 mt-10 justify-center lg:justify-start">
             <a
-              href="https://www.linkedin.com/in/yorrickdettlaff"
+              href="https://www.linkedin.com/in/yorrick-dettlaff"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-500 hover:text-violet-400 transition-colors flex items-center gap-2 text-sm"
@@ -122,7 +118,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Avatar */}
         <div className="flex-shrink-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <div className="relative">
             <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl gradient-bg p-0.5 animate-pulse-glow">

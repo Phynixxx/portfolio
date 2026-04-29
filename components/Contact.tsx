@@ -10,8 +10,8 @@ const contactItems = [
   {
     icon: ExternalLink,
     label: "LinkedIn",
-    value: "linkedin.com/in/yorrickdettlaff",
-    href: "https://www.linkedin.com/in/yorrickdettlaff",
+    value: "linkedin.com/in/yorrick-dettlaff",
+    href: "https://www.linkedin.com/in/yorrick-dettlaff",
   },
 ]
 

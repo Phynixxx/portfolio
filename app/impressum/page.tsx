@@ -37,12 +37,12 @@ export default function Impressum() {
               <p className="text-sm mt-1">
                 LinkedIn:{" "}
                 <a
-                  href="https://www.linkedin.com/in/yorrickdettlaff"
+                  href="https://www.linkedin.com/in/yorrick-dettlaff"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-violet-400 hover:text-violet-300 transition-colors"
                 >
-                  linkedin.com/in/yorrickdettlaff
+                  linkedin.com/in/yorrick-dettlaff
                 </a>
               </p>
             </section>

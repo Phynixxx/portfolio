@@ -66,18 +66,10 @@ const personSchema = {
   name: "Yorrick Dettlaff",
   url: DOMAIN,
   email: "yorrickdettlaff@web.de",
-  telephone: "+4917672948759",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Leostraße 13",
-    postalCode: "45359",
-    addressLocality: "Essen",
-    addressCountry: "DE",
-  },
   jobTitle: "Frontend Designer & Developer",
   description:
     "Frontend Designer und Developer mit Erfahrung in WordPress, Shopify, HTML/CSS/JS und IT-Projektmanagement.",
-  sameAs: ["https://www.linkedin.com/in/yorrickdettlaff"],
+  sameAs: ["https://www.linkedin.com/in/yorrick-dettlaff"],
   knowsLanguage: ["de", "en"],
 }
 

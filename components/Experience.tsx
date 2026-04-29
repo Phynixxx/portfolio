@@ -44,7 +44,7 @@ const experience = [
   {
     type: "work",
     period: "Okt 2019 bis Jun 2022",
-    title: "Ausbildung Kaufmann im Groß und Außenhandel",
+    title: "Ausbildung Kaufmann im Groß- und Außenhandel",
     company: "Plan Concept GmbH",
     location: "Essen",
     description:

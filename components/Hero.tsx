@@ -84,7 +84,7 @@ export default function Hero() {
 
           <p className="text-zinc-500 text-base leading-relaxed max-w-lg mx-auto lg:mx-0 mb-10">
             Ich gestalte und entwickle moderne Websites und digitale Erlebnisse.
-            Fokus auf sauberes Design, Performance und nutzerzentriertes Denken.
+            Fokus auf sauberes Design, Performance und <span className="whitespace-nowrap">nutzerzentriertes Denken.</span>
           </p>
 
           <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">

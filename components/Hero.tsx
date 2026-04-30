@@ -95,6 +95,28 @@ export default function Hero() {
             {t.hero.description2} <span className="whitespace-nowrap">{t.hero.descClean}</span> {t.hero.descMid} <span className="whitespace-nowrap">{t.hero.descUser}</span>
           </p>
 
+          {/* Bild auf Mobile zwischen Text und Buttons */}
+          <div className="lg:hidden flex justify-center mb-10">
+            <div className="relative">
+              <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-3xl gradient-bg p-0.5 animate-pulse-glow">
+                <div className="w-full h-full rounded-3xl bg-zinc-900 overflow-hidden">
+                  <Image
+                    src="/images/yorrick-0.jpg"
+                    alt="Yorrick Dettlaff"
+                    width={256}
+                    height={256}
+                    className="w-full h-full object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 glass rounded-2xl px-4 py-3 shadow-xl">
+                <p className="text-zinc-400 text-xs">{t.hero.since}</p>
+                <p className="text-zinc-50 font-bold text-lg leading-tight">2019</p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4">
             <a
               href="#kontakt"
@@ -126,7 +148,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex-shrink-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+        <div className="hidden lg:flex flex-shrink-0 animate-fade-up" style={{ animationDelay: "0.2s" }}>
           <div className="relative">
             <div className="w-72 h-72 lg:w-96 lg:h-96 rounded-3xl gradient-bg p-0.5 animate-pulse-glow">
               <div className="w-full h-full rounded-3xl bg-zinc-900 overflow-hidden">

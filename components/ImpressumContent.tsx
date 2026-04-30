@@ -8,7 +8,7 @@ export default function ImpressumContent() {
 
   return (
     <main className="min-h-screen bg-zinc-950 pt-28 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
           <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-3">
             {de ? "Rechtliches" : "Legal"}
@@ -18,10 +18,10 @@ export default function ImpressumContent() {
           </h1>
         </div>
 
-        <div className="space-y-10 text-zinc-400 leading-relaxed">
+        <div className="max-w-3xl space-y-10 text-zinc-400 leading-relaxed">
           <section>
             <h2 className="text-zinc-100 font-semibold text-lg mb-3">
-              {de ? "Angaben gemäß § 5 TMG" : "Information according to § 5 TMG"}
+              {de ? "Angaben gemäß § 5 DDG" : "Information according to § 5 DDG"}
             </h2>
             <p className="text-zinc-300 font-medium">Yorrick Dettlaff</p>
             <p className="mt-2 text-sm">
@@ -55,8 +55,8 @@ export default function ImpressumContent() {
           <section>
             <h2 className="text-zinc-100 font-semibold text-lg mb-3">
               {de
-                ? "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV"
-                : "Responsible for content according to § 55 para. 2 RStV"}
+                ? "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV"
+                : "Responsible for content according to § 18 para. 2 MStV"}
             </h2>
             <p className="text-sm">Yorrick Dettlaff</p>
           </section>
@@ -67,8 +67,8 @@ export default function ImpressumContent() {
             </h2>
             <p className="text-sm">
               {de
-                ? "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
-                : "As a service provider, we are responsible for our own content on these pages in accordance with general law (§ 7 para. 1 TMG). However, pursuant to §§ 8 to 10 TMG, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity."}
+                ? "Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 9 bis 11 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
+                : "As a service provider, we are responsible for our own content on these pages in accordance with general law (§ 7 para. 1 DDG). However, pursuant to §§ 9 to 11 DDG, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity."}
             </p>
             <p className="text-sm mt-3">
               {de
@@ -100,7 +100,7 @@ export default function ImpressumContent() {
           </section>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-zinc-800/50">
+        <div className="mt-16 pt-8 border-t border-zinc-800/50 max-w-3xl">
           <a href="/" className="text-violet-400 hover:text-violet-300 text-sm transition-colors">
             {de ? "← Zurück zur Startseite" : "← Back to home"}
           </a>

@@ -26,7 +26,7 @@ export default function DatenschutzContent() {
 
   return (
     <main className="min-h-screen bg-zinc-950 pt-28 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="mb-12">
           <p className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-3">
             {de ? "Rechtliches" : "Legal"}
@@ -36,7 +36,7 @@ export default function DatenschutzContent() {
           </h1>
         </div>
 
-        <div className="space-y-10 text-zinc-400 leading-relaxed">
+        <div className="max-w-3xl space-y-10 text-zinc-400 leading-relaxed">
           <section>
             <h2 className="text-zinc-100 font-semibold text-lg mb-3">
               {de ? "1. Datenschutz auf einen Blick" : "1. Privacy at a Glance"}
@@ -180,7 +180,7 @@ export default function DatenschutzContent() {
           </section>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-zinc-800/50">
+        <div className="mt-16 pt-8 border-t border-zinc-800/50 max-w-3xl">
           <a href="/" className="text-violet-400 hover:text-violet-300 text-sm transition-colors">
             {de ? "← Zurück zur Startseite" : "← Back to home"}
           </a>

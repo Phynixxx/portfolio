@@ -150,10 +150,10 @@ export default function Hero() {
 
       <a
         href="#ueber-mich"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-zinc-600 hover:text-violet-400 transition-colors animate-bounce"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 p-4 text-zinc-600 hover:text-violet-400 active:text-violet-400 transition-colors animate-bounce"
         aria-label="Nach unten scrollen"
       >
-        <ArrowDown size={20} />
+        <ArrowDown size={24} />
       </a>
     </section>
   )

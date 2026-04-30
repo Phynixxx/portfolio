@@ -8,7 +8,7 @@ export const translations = {
       contactBtn: "Kontakt aufnehmen",
     },
     hero: {
-      badge: "Verfügbar für neue Projekte",
+      badge: "Offen für neue Rollen",
       subtitle: "Frontend Designer & Developer",
       description1: "Ich gestalte und entwickle moderne Websites und digitale Erlebnisse.",
       description2: "Fokus auf",
@@ -89,7 +89,7 @@ export const translations = {
       contactBtn: "Get in touch",
     },
     hero: {
-      badge: "Available for new projects",
+      badge: "Open to new roles",
       subtitle: "Frontend Designer & Developer",
       description1: "I design and develop modern websites and digital experiences.",
       description2: "Focused on",

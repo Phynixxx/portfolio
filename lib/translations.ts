@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       badge: "Offen für neue Rollen",
-      subtitle: "Frontend Designer & Developer",
+      subtitle: "Frontend Designer & Projektmanager",
       description1: "Ich gestalte und entwickle moderne Websites und digitale Erlebnisse.",
       description2: "Fokus auf",
       descClean: "sauberes Design,",
@@ -90,7 +90,7 @@ export const translations = {
     },
     hero: {
       badge: "Open to new roles",
-      subtitle: "Frontend Designer & Developer",
+      subtitle: "Frontend Designer & Project Manager",
       description1: "I design and develop modern websites and digital experiences.",
       description2: "Focused on",
       descClean: "clean design,",
